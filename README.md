@@ -1,6 +1,6 @@
 ﻿# Forge Blueprints Mod
 
-This mod for *The Long Dark* allows you to craft additional items at the forge. Requires ModSettings.
+This mod for *The Long Dark* allows you to craft additional items at the forge. Requires ModSettings. Conflicts with [ArrowMod](https://github.com/ttr/tld-ArrowMod).
 
 ## Features
 
@@ -23,3 +23,5 @@ Cooking Pots are not 100% condition after crafting. I am investigating potential
 ## Note
 
 This mod will conflict with any mod that adds a prybar or cooking pot blueprint. I am investigating potential solutions.
+
+This mod conflicts with [ArrowMod](https://github.com/ttr/tld-ArrowMod). That mod will alter the crafting time of the 7-arrowhead recipe in this mod.
