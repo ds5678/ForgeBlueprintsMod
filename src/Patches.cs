@@ -25,10 +25,14 @@ namespace ForgeBlueprints
 				if (__instance.name == PRYBAR_NAME)
 				{
 					__instance.m_WeightKG = Settings.options.prybarWeight;
+					__instance.m_Harvest.m_YieldGearUnits[0] = (int)(Settings.options.prybarWeight * 5);
+					__instance.m_Harvest.m_DurationMinutes = ((int)(Settings.options.prybarWeight * 5)) * 15;
 				}
 				if (__instance.name == COOKING_POT_NAME)
 				{
 					__instance.m_WeightKG = Settings.options.cookingPotWeight;
+					__instance.m_Harvest.m_YieldGearUnits[0] = (int)(Settings.options.cookingPotWeight * 5);
+					__instance.m_Harvest.m_DurationMinutes = ((int)(Settings.options.cookingPotWeight * 5)) * 15;
 				}
 			}
 		}
@@ -55,7 +59,7 @@ namespace ForgeBlueprints
 
 				// Inputs
 				blueprint.m_RequiredGear = new Il2CppReferenceArray<GearItem>(1) { [0] = GetGearItemPrefab(SCRAP_METAL_NAME) };
-				blueprint.m_RequiredGearUnits = new Il2CppStructArray<int>(1) { [0] = Settings.options.cookingPotScrapMetal };
+				blueprint.m_RequiredGearUnits = new Il2CppStructArray<int>(1) { [0] = 6 };
 				blueprint.m_KeroseneLitersRequired = 0f;
 				blueprint.m_GunpowderKGRequired = 0f;
 				blueprint.m_RequiredTool = GetToolsItemPrefab(HEAVYHAMMER_NAME);
@@ -91,7 +95,7 @@ namespace ForgeBlueprints
 
 				// Inputs
 				blueprint.m_RequiredGear = new Il2CppReferenceArray<GearItem>(1) { [0] = GetGearItemPrefab(SCRAP_METAL_NAME) };
-				blueprint.m_RequiredGearUnits = new Il2CppStructArray<int>(1) { [0] = Settings.options.prybarScrapMetal };
+				blueprint.m_RequiredGearUnits = new Il2CppStructArray<int>(1) { [0] = 6 };
 				blueprint.m_KeroseneLitersRequired = 0f;
 				blueprint.m_GunpowderKGRequired = 0f;
 				blueprint.m_RequiredTool = GetToolsItemPrefab(HEAVYHAMMER_NAME);
@@ -256,17 +260,17 @@ namespace ForgeBlueprints
 
 		//Update Blueprint when Mod Settings change; will probably cause conflicts with mods that add a cooking pot or prybar blueprint
 		[HarmonyPatch(typeof(Panel_Crafting), "ItemPassesFilter")]
-		private static class UpdateRecipe
+		private static class UpdateScrapMetalRequirements
 		{
 			internal static void Postfix(BlueprintItem bpi)
 			{
 				if (bpi?.m_CraftedResult?.name == COOKING_POT_NAME)
 				{
-					bpi.m_RequiredGearUnits = new Il2CppStructArray<int>(1) { [0] = Settings.options.cookingPotScrapMetal };
+					bpi.m_RequiredGearUnits[0] = (int)(Settings.options.cookingPotWeight * 5 + 1);
 				}
-				if (bpi?.m_CraftedResult?.name == PRYBAR_NAME)
+				if (bpi?.m_CraftedResult?.name == PRYBAR_NAME )
 				{
-					bpi.m_RequiredGearUnits = new Il2CppStructArray<int>(1) { [0] = Settings.options.prybarScrapMetal };
+					bpi.m_RequiredGearUnits[0] = (int)(Settings.options.prybarWeight * 5 + 1);
 				}
 			}
 		}
