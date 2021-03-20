@@ -43,7 +43,7 @@
     <Reference Include="MelonLoader.ModHandler, Version=0.2.7.4, Culture=neutral, processorArchitecture=MSIL">
       <Private>False</Private>
     </Reference>
-    <Reference Include="ModSettings, Version=1.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ModSettings, Version=1.7.1.0, Culture=neutral, processorArchitecture=MSIL">
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -79,7 +79,6 @@
   <ItemGroup>
     <None Include="..\README.md" />
     <None Include="..\LICENSE" />
-    <EmbeddedResource Include="res\forgeblueprints" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
