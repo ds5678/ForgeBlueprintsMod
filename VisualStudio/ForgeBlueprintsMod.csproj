@@ -77,8 +77,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="README.md" />
-    <None Include="LICENSE" />
+    <None Include="..\README.md" />
+    <None Include="..\LICENSE" />
     <EmbeddedResource Include="res\forgeblueprints" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
