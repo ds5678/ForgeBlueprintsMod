@@ -13,10 +13,10 @@ This mod for *The Long Dark* allows you to craft additional items at the forge. 
 
 1. If you haven't done so already, install MelonLoader by downloading and running [MelonLoader.Installer.exe](https://github.com/HerpDerpinstine/MelonLoader/releases/latest/download/MelonLoader.Installer.exe)
 2. Download the latest version of `ForgeBlueprintsMod.dll` and `ForgeBlueprintsMod.zip` from the [releases page](https://github.com/ds5678/ForgeBlueprintsMod/releases)
-3. Download the latest version of `ModComponentAPI.dll` and `ModComponentMapper.dll` from the [releases page](https://github.com/ds5678/ModComponent/releases).
+3. Download the latest version of `ModComponent.dll` from the [releases page](https://github.com/ds5678/ModComponent/releases).
 4. Download the latest version of `AssetLoader.dll` from the [releases page](https://github.com/ds5678/AssetLoader/releases).
 5. Download the latest version of `ModSettings.dll` from its [release page](https://github.com/zeobviouslyfakeacc/ModSettings/releases).
-6. Move `AssetLoader.dll`, `ModComponentAPI.dll`, `ModComponentMapper.dll`, and `ModSettings.dll` into the Mods folder in your TLD install directory.
+6. Move `AssetLoader.dll`, `ModComponent.dll`, and `ModSettings.dll` into the Mods folder in your TLD install directory.
 7. Run the game once. ModComponent may create some directories in your mods folder.
 8. Move `ForgeBlueprintsMod.dll` into your mods folder
 9. Move `ForgeBlueprintsMod.zip` into the `ModComponentZips` folder. Do not extract it!
