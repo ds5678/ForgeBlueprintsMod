@@ -1,13 +1,10 @@
-﻿using System;
-using Harmony;
-using UnhollowerBaseLib;
-using UnityEngine;
+﻿using Harmony;
 
 namespace ForgeBlueprints
 {
-    internal static class Patches
-    {
-		[HarmonyPatch(typeof(GearItem), "ManualUpdate")]
+	internal static class Patches
+	{
+		[HarmonyPatch(typeof(GearItem), "Awake")]
 		private static class ChangeWeightPatch
 		{
 			internal static void Postfix(GearItem __instance)
@@ -15,14 +12,14 @@ namespace ForgeBlueprints
 				if (__instance.name == "GEAR_Prybar")
 				{
 					__instance.m_WeightKG = Settings.options.prybarWeight;
-					__instance.m_Harvest.m_YieldGearUnits[0] = (int)(Settings.options.prybarWeight * 5);
-					__instance.m_Harvest.m_DurationMinutes = ((int)(Settings.options.prybarWeight * 5)) * 15;
+					__instance.m_Harvest.m_YieldGearUnits[0] = (int)(Settings.options.prybarWeight * 4);
+					__instance.m_Harvest.m_DurationMinutes = ((int)(Settings.options.prybarWeight * 4)) * 20;
 				}
-				if (__instance.name == "GEAR_CookingPot")
+				else if (__instance.name == "GEAR_CookingPot")
 				{
 					__instance.m_WeightKG = Settings.options.cookingPotWeight;
-					__instance.m_Harvest.m_YieldGearUnits[0] = (int)(Settings.options.cookingPotWeight * 5);
-					__instance.m_Harvest.m_DurationMinutes = ((int)(Settings.options.cookingPotWeight * 5)) * 15;
+					__instance.m_Harvest.m_YieldGearUnits[0] = (int)(Settings.options.cookingPotWeight * 4);
+					__instance.m_Harvest.m_DurationMinutes = ((int)(Settings.options.cookingPotWeight * 4)) * 20;
 				}
 			}
 		}
@@ -48,7 +45,7 @@ namespace ForgeBlueprints
 				{
 					bpi.m_RequiredGearUnits[0] = (int)(Settings.options.cookingPotWeight * 5 + 1);
 				}
-				if (bpi?.m_CraftedResult?.name == "GEAR_Prybar")
+				else if (bpi?.m_CraftedResult?.name == "GEAR_Prybar")
 				{
 					bpi.m_RequiredGearUnits[0] = (int)(Settings.options.prybarWeight * 5 + 1);
 				}
