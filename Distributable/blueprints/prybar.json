@@ -1,5 +1,5 @@
 {
-    "@type": "ModComponentAPI.ModBlueprint",
+    "Name": "ForgeBlueprints_Prybar",
     "RequiredGear": ["GEAR_ScrapMetal"],
     "RequiredGearUnits": [6],
     "KeroseneLitersRequired": 0,

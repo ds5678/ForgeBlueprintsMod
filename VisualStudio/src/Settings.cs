@@ -5,6 +5,8 @@ namespace ForgeBlueprints
 {
 	internal class ForgeModSettings : JsonModSettings
 	{
+		public static ForgeModSettings options= new ForgeModSettings();
+
 		[Section("Cooking Pot")]
 		[Name("Weight")]
 		[Description("Default is 1 kg. Affects crafting requirements and harvesting yields. Changes take effect on scene change.")]
@@ -28,15 +30,5 @@ namespace ForgeBlueprints
 			GetGearItemPrefab("GEAR_CookingPot").m_WeightKG = cookingPotWeight;
 		}
 		private static GearItem GetGearItemPrefab(string name) => Resources.Load(name).Cast<GameObject>().GetComponent<GearItem>();
-	}
-	internal static class Settings
-	{
-		public static ForgeModSettings options;
-		public static void OnLoad()
-		{
-			options = new ForgeModSettings();
-			options.AddToModSettings("Forge Blueprints Mod");
-			options.ChangePrefabWeights();
-		}
 	}
 }

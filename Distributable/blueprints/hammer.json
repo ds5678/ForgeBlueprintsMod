@@ -1,5 +1,5 @@
 {
-    "@type": "ModComponentAPI.ModBlueprint",
+    "Name": "ForgeBlueprints_HeavyHammer",
     "RequiredGear": ["GEAR_ScrapMetal","GEAR_Hardwood"],
     "RequiredGearUnits": [10,1],
     "KeroseneLitersRequired": 0,

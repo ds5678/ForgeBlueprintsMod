@@ -1,5 +1,5 @@
 {
-    "@type": "ModComponentAPI.ModBlueprint",
+    "Name": "ForgeBlueprints_EfficientArrowHeads",
     "RequiredGear": ["GEAR_ScrapMetal"],
     "RequiredGearUnits": [3],
     "KeroseneLitersRequired": 0,
